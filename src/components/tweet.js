@@ -16,6 +16,9 @@ export default class Tweet extends React.Component
     addFav = () => {
         this.setState({favs: this.state.favs + 1})
     }
+    addRet = () => {
+        this.setState({retweets: this.state.retweets + 1})
+    }
 
     render()
     {
@@ -34,8 +37,11 @@ export default class Tweet extends React.Component
                                         <small className="text-muted">{this.state.date}</small>
                                     </p>
                                     <div className="row">
-                                        <div className="col-12 likes">
+                                        <div className="col-6 likes">
                                             <p><a href="#" onClick={this.addFav}><i className="far fa-heart"></i></a> {this.state.favs} Likes</p>
+                                        </div>
+                                        <div className="col-6 likes">
+                                            <p><a href="#" onClick={this.addRet}><i className="fas fa-retweet"></i></a> {this.state.retweets} ReTweets</p>
                                         </div>
                                     </div>
                                 </div>
